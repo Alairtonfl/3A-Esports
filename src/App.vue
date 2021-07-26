@@ -11,3 +11,14 @@ export default {
 };
 </script>
 
+<style scoped>
+    *{
+      position: relative;
+      height: 100vh;
+      width: 100vw;
+      background-color: #cfcccc;   
+    }
+</style>
+
+
+
