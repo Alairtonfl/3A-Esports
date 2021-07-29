@@ -8,6 +8,9 @@
                             <input id="name" type="text" class="form-control" placeholder="Nome" required>
                         </div>
                         <div class="form-group">
+                            <input id="cpf" type="int" class="form-control" placeholder="CPF" required>
+                         </div>
+                        <div class="form-group">
                             <input id="email" type="text" class="form-control" placeholder="E-mail" required>
                          </div>
                         <div class="form-group">
@@ -33,7 +36,7 @@ export default {
 fieldset{
     background-color: white;
     width: 400px;
-    height: 360px;
+    height: 380px;
     position: relative;
     left: 500px;
     top: 180px;
@@ -51,15 +54,19 @@ input{
     position: relative;
     top: 70px;
 }
+#cpf {
+    position: relative;
+    top: 87px;
+}
 
 #email {
     position: relative;
-    top: 90px;
+    top: 100px;
 }
 
 #password {
     position: relative;
-    top: 110px;
+    top: 113px;
 }
 
 #registerBtn {

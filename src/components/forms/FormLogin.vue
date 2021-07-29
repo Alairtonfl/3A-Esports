@@ -1,41 +1,61 @@
 <template>
   <div class="formstyle">
     <form id="login-form" class="form">
-        <div class="mb-2">
-          <input type="text" name="email" id="email" class="form-control" placeholder="Email" required/>
+      <div class="mb-2">
+        <input
+          type="email"
+          name="email"
+          id="email"
+          class="form-control"
+          placeholder="Email"
+          required
+        />
+      </div>
+      <div class="mb-2">
+        <input
+          type="password"
+          name="senha"
+          id="password"
+          class="form-control"
+          placeholder="Senha"
+          required
+        />
+      </div>
+
+      <ButtonLogin/>
+      
+      <div class="inline"></div>
+      <div class="form-group">
+        <div class="text-center">
+          <h6>
+            Não possui conta?
+            <a href="http://localhost:8080/register"> Cadastre-se</a>
+          </h6>
         </div>
-        <div class="mb-2">
-          <input type="password" name="senha" id="password" class="form-control" placeholder="Senha" required/> 
-        </div>
-        
-        <div class="form-group">
-            <button class="btn btn-primary w-100" id="button_login" type="submit">ENTRE EM SUA CONTA</button>
-        </div>
-         <div class="inline"></div>
-          <div class="form-group">
-            <div class="text-center">
-                  <h6>Não possui conta?  <a href=""> Cadastre-se</a> </h6>
-            </div>
-        </div>
-        
+      </div>
     </form>
   </div>
 </template>
 
 <script>
+import ButtonLogin from '../forms/ButtoLogin.vue'
 export default {
-  name: "FormLogin"
-}
+  name: "FormLogin",
+  components: {
+    ButtonLogin
+  }
+};
+
 </script>
 
 <style scoped>
 
-h1, h6, a{
+h1, h6, a {
   color: black;
   text-align-last: center;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
-.formstyle{
+.formstyle {
   position: relative;
   left: 500px;
   top: 190px;
@@ -47,7 +67,7 @@ h1, h6, a{
   pointer-events: auto;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid rgba(0,0,0,.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   max-width: 500px;
 }
 
@@ -78,7 +98,7 @@ h1, h6, a{
   height: 28px;
 }
 
-.inline{
+.inline {
   align-items: center;
   border-bottom: 1px solid #889c93;
   display: flex;
@@ -86,22 +106,15 @@ h1, h6, a{
   text-align: center;
 }
 
-#background{
+#background {
   margin: 0;
-	padding: 0;
+  padding: 0;
   height: 100%;
   background-color: #17a2b8;
 }
 
-#button_login {
-  position: relative;
-  top: 68px;
-  width: 20px;
-}
-
-h6{
+h6 {
   position: relative;
   top: 40px;
 }
-
 </style>
