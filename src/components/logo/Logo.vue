@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style scoped>
-div{
+#container{
     background-color: rgb(18, 147, 187);
     position: relative;
     left: 500px;
@@ -28,6 +28,5 @@ h1{
     position: relative;
     top: 25px;
 }
-
 
 </style>

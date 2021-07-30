@@ -1,7 +1,7 @@
 <template>
   <div class="form-group">
     <button
-      class="btn btn-primary w-100"
+      class="btn btn-primary"
       id="button_login"
       type="submit"
       v-on:click="LoginVerification"
@@ -31,7 +31,9 @@ export default {
 <style scoped>
   #button_login {
   position: relative;
-  top: 68px;
-  width: 20px;
+  top: 100px;
+  left: 30px;
+  width: 335px;
+  border-radius: 0%;
 }
 </style>

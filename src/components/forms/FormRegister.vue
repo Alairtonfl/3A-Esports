@@ -3,7 +3,7 @@
         <fieldset>
             <div id="createAccount">
                <div id="login-row" class="row justify-content-center align-items-center">
-                   <form>
+                   <form @submit="register">
                         <div class="form-group">
                             <input id="name" type="text" class="form-control" placeholder="Nome" required>
                         </div>
@@ -28,7 +28,12 @@
 
 <script>
 export default {
-    name: "FormRegister"
+    name: "FormRegister",
+    methods: {
+        register(){
+            alert('TESTE')
+        }
+    }
 }
 </script>
 

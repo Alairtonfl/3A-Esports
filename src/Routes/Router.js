@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 import Home from '../page/Home.vue';
 import Login from '../page/Login.vue';
 import Register from '../page/Register.vue';
-import LoginAdm from '../page/LoginAdm'
+
 
 
 
@@ -26,10 +26,6 @@ const routes = [
     component: Register
   },
 
-  {
-    path: '/loginAdm',
-    component: LoginAdm
-  }
    
 ]
 
