@@ -3,7 +3,7 @@
         <fieldset>
             <div id="createAccount">
                <div id="login-row" class="row justify-content-center align-items-center">
-                   <form @submit="register">
+                   <form @submit.prevent="register">
                         <div class="form-group">
                             <input id="name" type="text" class="form-control" placeholder="Nome" required>
                         </div>
@@ -11,13 +11,13 @@
                             <input id="cpf" type="int" class="form-control" placeholder="CPF" required>
                          </div>
                         <div class="form-group">
-                            <input id="email" type="text" class="form-control" placeholder="E-mail" required>
+                            <input id="email" type="email" class="form-control" placeholder="E-mail" required>
                          </div>
                         <div class="form-group">
                             <input id="password" type="password" class="form-control" placeholder="Senha" required>
                         </div>
                         <div class="form-group">
-                            <button id="registerBtn" class="btn btn-success" type="submit">ABRIR MINHA CONTA</button>
+                            <button id="registerBtn" class="btn btn-success" type="submit" v-on:click.prevent="Verification">ABRIR MINHA CONTA</button>
                         </div>
                    </form>
                </div>  
@@ -30,9 +30,17 @@
 export default {
     name: "FormRegister",
     methods: {
-        register(){
-            alert('TESTE')
-        }
+       Verification() {
+            let cpf = document.getElementById("cpf").value;
+            let password = document.getElementById("password").value;
+         
+            if(password.length < 6){
+                alert("A senha precisa pelo menos seis digitos")
+            }
+            if(cpf.length != 11){
+                alert("CPF inválido")
+            }
+       }
     }
 }
 </script>
