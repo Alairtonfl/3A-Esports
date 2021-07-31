@@ -1,6 +1,6 @@
 # vue-project
 
-> Sistema de ecommerce de artigos esportivos
+> Sistema de ecommerce de artigos esportivos deesenvolvido para a grade de WEB da faculdade
 
 ## Build Setup
 
