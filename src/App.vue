@@ -14,7 +14,7 @@ export default {
 <style scoped>
     *{
       position: relative;
-      height: 100vh;
+      height: 100%;
       width: 100vw;
       background-color: #cfcccc;   
     }
