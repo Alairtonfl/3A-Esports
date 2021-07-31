@@ -1,4 +1,4 @@
-# vue-project
+# 3AE Sports
 
 > Sistema de ecommerce de artigos esportivos deesenvolvido para a grade de WEB da faculdade
 
