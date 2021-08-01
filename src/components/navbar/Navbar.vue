@@ -15,10 +15,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="#">MyProfile</a>
-        </div>
-        <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="#">Products</a>
+          <a class="nav-link active" aria-current="page" href="#">Usuario logado</a>
         </div>
         <div class="navbar-nav">
           <a class="nav-link active" aria-current="page" href="#">Category</a>
