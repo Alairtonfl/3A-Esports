@@ -5,19 +5,19 @@
                <div id="login-row" class="row justify-content-center align-items-center">
                    <form @submit.prevent="register">
                         <div class="form-group">
-                            <input id="name" type="text" class="form-control" placeholder="Nome" required>
+                            <input id="name" type="text" class="form-control" placeholder="Nome" v-model="user.name" required>
                         </div>
                         <div class="form-group">
-                            <input id="cpf" type="int" class="form-control" placeholder="CPF" required>
+                            <input id="cpf" type="int" class="form-control" placeholder="CPF" v-model="user.cpf" required>
                          </div>
                         <div class="form-group">
-                            <input id="email" type="email" class="form-control" placeholder="E-mail" required>
+                            <input id="email" type="email" class="form-control" placeholder="E-mail" v-model="user.email" required>
                          </div>
                         <div class="form-group">
-                            <input id="password" type="password" class="form-control" placeholder="Senha" required>
+                            <input id="password" type="password" class="form-control" placeholder="Senha" v-model="user.password" required>
                         </div>
                         <div class="form-group">
-                            <button id="registerBtn" class="btn btn-success" type="submit" v-on:click.prevent="Verification">ABRIR MINHA CONTA</button>
+                            <button id="registerBtn" class="btn btn-success" type="submit">ABRIR MINHA CONTA</button>
                         </div>
                    </form>
                </div>  
@@ -27,18 +27,37 @@
 </template>
 
 <script>
+import api from "../../services/api.js";
 export default {
     name: "FormRegister",
+    data(){
+      return {
+        user: {
+          name: '',
+          email: '',
+          cpf: '',
+          password: ''
+        }
+      }
+    },
     methods: {
-       Verification() {
-            let cpf = document.getElementById("cpf").value;
-            let password = document.getElementById("password").value;
-         
-            if(password.length < 6){
+       register() {
+            if(this.user.password.length < 6){
                 alert("A senha precisa pelo menos seis digitos")
             }
-            if(cpf.length != 11){
+            if(this.user.cpf.length != 11){
                 alert("CPF inválido")
+            }
+
+            if(this.user.password.length > 6 && this.user.cpf.length == 11){
+              api.post('users/register', this.user).then((Response) => {
+                if(Response.data){
+                  alert('Usuario cadastrado com sucesso, redirecionando para a tela inicial')
+                  window.location.href = "http://localhost:8080/home"
+                } else {
+                  alert('Ocorreu algum erro')
+                }
+              })
             }
        }
     }

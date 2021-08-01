@@ -1,65 +1,71 @@
 <template>
-  
-    <form id="login-form" class="form">
-      <div class="mb-2">
-        <input
-          type="email"
-          name="email"
-          id="email"
-          class="form-control"
-          placeholder="Email"
-          required
-        />
-      </div>
-      <div class="mb-2">
-        <input
-          type="password"
-          name="senha"
-          id="password"
-          class="form-control"
-          placeholder="Senha"
-          required
-        />
-      </div>
+  <form id="login-form" class="form" @submit.prevent="LoginVerification">
+    <div class="mb-2">
+      <input
+        type="email"
+        name="email"
+        id="email"
+        v-model="user.email"
+        class="form-control"
+        placeholder="Email"
+        required
+      />
+    </div>
+    <div class="mb-2">
+      <input
+        type="password"
+        name="senha"
+        id="password"
+        v-model="user.password"
+        class="form-control"
+        placeholder="Senha"
+        required
+      />
+    </div>
 
-      <button
-      class="btn btn-primary"
-      id="button_login"
-      type="submit"
-      v-on:click="LoginVerification"
-    >
+    <button class="btn btn-primary" id="button_login" type="submit">
       ENTRE EM SUA CONTA
     </button>
-      
-      <div class="inline"></div>
-     
-    </form>
+
+    <div class="inline"></div>
+  </form>
 </template>
 
 <script>
+import api from "../../services/api.js";
 
 export default {
   name: "FormLogin",
-  components: {
+  data() {
+    return {
+      user: {
+        email: "",
+        password: "",
+      },
+    };
   },
-    methods: {
+  methods: {
     LoginVerification() {
-      let password = document.getElementById("password").value;
-      if (password.length > 6) {
-        return true;
+      if (this.user.password.length > 6) {
+        api.post("users/login", this.user).then((Response) => {
+          if (Response.data) {
+            window.location.href = "http://localhost:8080/home"
+          } else {
+            alert("Usuario nao cadastrado, registre-se primeiro...");
+          }
+        });
       } else {
-        alert("A senha precisa ter pelo menos seis caracteres");
+        alert("A senha precisa ter mais de 6 caracteres");
       }
-    }
-  }
+    },
+  },
 };
-
 </script>
 
 <style scoped>
-
-
-h1, h6, a {
+h1,
+h6,
+a {
   color: black;
   text-align-last: center;
   font-family: Georgia, "Times New Roman", Times, serif;
