@@ -1,5 +1,4 @@
 <template>
-    
         <fieldset>
             <div id="createAccount">
                <div id="login-row" class="row justify-content-center align-items-center">
