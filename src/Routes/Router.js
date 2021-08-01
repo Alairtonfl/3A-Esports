@@ -6,9 +6,7 @@ Vue.use(VueRouter)
 import Home from '../page/Home.vue';
 import Login from '../page/Login.vue';
 import Register from '../page/Register.vue';
-
-
-
+import RegisterAdm from '../page/RegisterAdm.vue';
 
 const routes = [
   {
@@ -23,13 +21,14 @@ const routes = [
     path: '/login',
     component: Login
   },
-  
   {
     path: '/register',
     component: Register
   },
-
-   
+  {
+    path: '/registerAdm',
+    component: RegisterAdm
+  }
 ]
 
 const router = new VueRouter({
