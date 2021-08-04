@@ -20,7 +20,6 @@ export default {
     description: String,
     price: Number
   }
-
 }
 </script>
 

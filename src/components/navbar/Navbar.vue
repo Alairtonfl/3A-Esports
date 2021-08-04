@@ -1,35 +1,64 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Home</a>
+  <header class="header">
+    <nav
+      class="
+        navbar navbar-expand 
+      "
+    >
+      <a href="http://localhost:8080/home"><img src="/static/3AESports2-Semfundo.png" id="form-image-nav"></a>
       <button
         class="navbar-toggler"
         type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNavAltMarkup"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup"
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="#">Usuario logado</a>
-        </div>
-        <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="#">Category</a>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
+        <div class="navbar-wrapper-right">
+          <a class="nav-link btn btn-outline-info text-white ajusts" href="http://localhost:8080/login"
+            >Entrar</a
+          >
+          <a
+            class="nav-link btn header-btn btn-warning text-white ajusts"
+            tabindex="0"
+            href="http://localhost:8080/register"
+            >Cadastre-se</a
+          >
         </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 </template>
-
+ 
 <script>
 export default {
-  name: "Navbar"
-}
+  name: "Navbar",
+};
 </script>
-
-
  
+<style>
+.header {
+  background: #0988d1;
+  box-shadow: none;
+  color: #fff;
+}
+.navbar-wrapper-right {
+    align-items: stretch;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+.ajusts{
+  margin-right: 5px;
+}
+.ajust {
+  padding: 0.5%;
+}
+#form-image-nav{
+    width: 30%;
+}
+</style>

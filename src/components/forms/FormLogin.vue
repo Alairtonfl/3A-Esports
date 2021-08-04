@@ -1,6 +1,20 @@
 <template>
   <form id="login-form" class="form" @submit.prevent="LoginVerification">
-    <div class="mb-2">
+    <div class="input-group mb-3" id="input-Email">
+      <span class="input-group-text" id="basic-addon1">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-person-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+          />
+        </svg>
+      </span>
       <input
         type="email"
         name="email"
@@ -11,7 +25,22 @@
         required
       />
     </div>
-    <div class="mb-2">
+
+    <div class="input-group mb-3" id="input-Password">
+      <span class="input-group-text" id="basic-addon1">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-lock-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"
+          />
+        </svg>
+      </span>
       <input
         type="password"
         name="senha"
@@ -24,7 +53,7 @@
     </div>
 
     <button class="btn btn-primary" id="button_login" type="submit">
-      ENTRE EM SUA CONTA
+      Entrar
     </button>
 
     <div class="inline"></div>
@@ -49,7 +78,7 @@ export default {
       if (this.user.password.length > 6) {
         api.post("users/login", this.user).then((Response) => {
           if (Response.data) {
-            window.location.href = "http://localhost:8080/home"
+            window.location.href = "http://localhost:8080/home";
           } else {
             alert("Usuario nao cadastrado, registre-se primeiro...");
           }
@@ -71,16 +100,16 @@ a {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-#email {
+#input-Email {
   position: relative;
-  top: 60px;
+  top: 70px;
   left: 30px;
   width: 333px;
 }
 
-#password {
+#input-Password {
   position: relative;
-  top: 80px;
+  top: 75px;
   left: 30px;
   width: 333px;
 }
@@ -101,7 +130,7 @@ a {
   top: 100px;
   left: 30px;
   width: 335px;
-  border-radius: 0%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h6 {

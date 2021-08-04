@@ -65,12 +65,13 @@ export default {
 
 <style scoped>
 fieldset{
+    box-shadow: 0 0 1em black;
     background-color: white;
     width: 400px;
-    height: 380px;
+    height: 400px;
     position: relative;
-    left: 500px;
-    top: 180px;
+    left: 40%;
+    top: 190px;
  
 }
 input{
@@ -106,7 +107,6 @@ input{
     left: 25px;
     width: 350px;
     height: 42px;
-    border-radius: 0%;
 }
 
 </style>

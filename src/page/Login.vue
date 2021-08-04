@@ -2,7 +2,6 @@
     <div>
         <SpaceLogin />
         <Logo/>  
-        
     </div>
 </template>
 

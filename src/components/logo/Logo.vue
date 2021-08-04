@@ -1,6 +1,6 @@
 <template>
     <div id="container">
-        <h1>3AESPORTS</h1>
+        <a href="http://localhost:8080/home"><img src="/static/3AESports2.png" id="form-image"></a>
     </div> 
 </template>
 
@@ -12,9 +12,8 @@ export default {
 
 <style scoped>
 #container{
-    background-color: rgb(18, 147, 187);
     position: relative;
-    left: 500px;
+    left: 40%;
     bottom: 250px;
     height: 90px;
     width: 400px;
@@ -27,6 +26,11 @@ h1{
     text-align: center;
     position: relative;
     top: 25px;
+}
+
+#form-image{
+    width: 100%;
+    height: 100%;
 }
 
 </style>
