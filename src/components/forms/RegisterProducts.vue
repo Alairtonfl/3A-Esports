@@ -58,9 +58,10 @@ export default {
 
 <style scoped>
 fieldset{
+  box-shadow: 0 0 1em black;
     background-color: white;
     width: 400px;
-    height: 450px;
+    height: 470px;
     position: relative;
     left: 40%;
     top: 230px;

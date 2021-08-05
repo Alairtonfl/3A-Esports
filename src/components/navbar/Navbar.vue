@@ -5,7 +5,9 @@
         navbar navbar-expand 
       "
     >
+    <div>
       <a href="http://localhost:8080/home"><img src="/static/3AESports2-Semfundo.png" id="form-image-nav"></a>
+    </div>
       <button
         class="navbar-toggler"
         type="button"
@@ -19,7 +21,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
         <div class="navbar-wrapper-right">
-          <a class="nav-link btn btn-outline-info text-white ajusts" href="http://localhost:8080/login"
+          <a class="nav-link btn btn-outline-info text-white ajusts-btn-enter" href="http://localhost:8080/login"
             >Entrar</a
           >
           <a
@@ -52,13 +54,19 @@ export default {
     justify-content: flex-end;
     margin-left: auto;
 }
-.ajusts{
+
+.ajusts-btn-enter{
   margin-right: 5px;
+}
+
+.ajusts{
+  margin-right: 20px;
 }
 .ajust {
   padding: 0.5%;
 }
 #form-image-nav{
+    margin-left: 10%;
     width: 30%;
 }
 </style>
