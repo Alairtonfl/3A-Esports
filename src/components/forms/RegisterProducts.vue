@@ -44,7 +44,7 @@ export default {
 
     methods: {
       cadProduct(){
-        api.post('products/add', this.product).then((Response) => {
+        api.post('products', this.product).then((Response) => {
           if(Response) {
             alert('Produto cadastrado com sucesso...')
           } else {
@@ -60,10 +60,10 @@ export default {
 fieldset{
     background-color: white;
     width: 400px;
-    height: 440px;
+    height: 450px;
     position: relative;
-    left: 500px;
-    top: 200px;
+    left: 40%;
+    top: 230px;
  
 }
 input{
@@ -76,33 +76,33 @@ input{
 
 #img {
     position: relative;
-    top: 110px;
+    top: 90px;
 }
 
 #name {
     position: relative;
-    top: 122px;
+    top: 102px;
 }
 
 #price {
     position: relative;
-    top: 126px;
+    top: 106px;
 }
 
 #category {
     position: relative;
-    top: 133px;
+    top: 113px;
 }
 
 #description {
     position: relative;
-    top: 143px;
+    top: 123px;
     height: 90px;
 }
 
 #registerProduct {
     position: relative;
-    top: 155px;
+    top: 130px;
     left: 25px;
     width: 350px;
     height: 42px;

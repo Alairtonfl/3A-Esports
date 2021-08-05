@@ -25,8 +25,9 @@ const routes = [
     path: '/register',
     component: Register
   },
+  // ROTA PROTEGIDA NA PROXIMA VERSAO
   {
-    path: '/registerAdm',
+    path: '/admin/register',
     component: RegisterAdm
   }
 ]
