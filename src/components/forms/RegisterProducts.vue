@@ -29,26 +29,37 @@
 import api from "../../services/api.js"
 export default {
     name: "RegisterProducts",
-
+    mounted() {
+    this.user = JSON.parse(localStorage.getItem("User"));
+    if (!localStorage.getItem("User") || !this.user.admin) {
+      this.$router.push({
+        path: '/'
+      })
+    }
+  },
     data() {
       return{
+        user: [],
         product: {
           image: '',
           name: '',
           category: '',
           description: '',
-          price: ''
+          price: '',
+          admin: ''
         }
       }
     },
-
     methods: {
       cadProduct(){
+        this.product.admin = this.user.admin;
         api.post('products', this.product).then((Response) => {
           if(Response) {
             alert('Produto cadastrado com sucesso...')
+            this.$router.go();
           } else {
             alert('Ocorreu um erro')
+            this.$router.go();
           }
         })
       }

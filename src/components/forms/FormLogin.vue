@@ -65,6 +65,13 @@ import api from "../../services/api.js";
 
 export default {
   name: "FormLogin",
+  mounted() {
+    if (localStorage.getItem("User")) {
+      this.$router.push({
+        path: '/home'
+      })
+    }
+  },
   data() {
     return {
       user: {
@@ -78,9 +85,15 @@ export default {
       if (this.user.password.length > 6) {
         api.post("users/login", this.user).then((Response) => {
           if (Response.data) {
-            window.location.href = "http://localhost:8080/home";
+            localStorage.setItem('User', JSON.stringify(Response.data));
+            this.$router.push({
+            path: '/home'
+          })
           } else {
             alert("Usuario nao cadastrado, registre-se primeiro...");
+           this.$router.push({
+            path: '/register'
+            })
           }
         });
       } else {

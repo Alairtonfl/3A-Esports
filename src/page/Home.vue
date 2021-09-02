@@ -31,9 +31,16 @@ export default {
   data() {
     return {
       products: [],
+      user: []
     };
   },
   mounted() {
+    if (!localStorage.getItem("User")) {
+      this.$router.push({
+        path: '/login'
+      })
+    }
+    this.user = JSON.parse(localStorage.getItem("User"));
     api.get("/products").then((Response) => {
       this.products = Response.data;
     });

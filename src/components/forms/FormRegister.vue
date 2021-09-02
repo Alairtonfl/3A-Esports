@@ -29,13 +29,22 @@
 import api from "../../services/api.js";
 export default {
     name: "FormRegister",
+      name: "FormLogin",
+    mounted() {
+      if (localStorage.getItem("User")) {
+        this.$router.push({
+        path: '/home'
+      })
+    }
+    },
     data(){
       return {
         user: {
           name: '',
           email: '',
           cpf: '',
-          password: ''
+          password: '',
+          admin: false
         }
       }
     },
@@ -47,7 +56,6 @@ export default {
             if(this.user.cpf.length != 11){
                 alert("CPF inválido")
             }
-
             if(this.user.password.length > 6 && this.user.cpf.length == 11){
               api.post('users/register', this.user).then((Response) => {
                 if(Response.data){

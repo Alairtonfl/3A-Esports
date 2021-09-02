@@ -21,15 +21,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
         <div class="navbar-wrapper-right">
-          <a class="nav-link btn btn-outline-info text-white ajusts-btn-enter" href="http://localhost:8080/login"
-            >Entrar</a
-          >
-          <a
-            class="nav-link btn header-btn btn-warning text-white ajusts"
-            tabindex="0"
-            href="http://localhost:8080/register"
-            >Cadastre-se</a
-          >
+          <a class="nav-link btn btn-outline-info text-white ajusts-btn-enter">Sair</a>
         </div>
       </div>
     </nav>

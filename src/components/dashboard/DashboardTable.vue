@@ -54,6 +54,19 @@
 <script>
 export default {
   name: "DashboardTable",
+  data() {
+    return {
+      user: []
+    };
+  },
+  mounted() {
+    this.user = JSON.parse(localStorage.getItem("User"));
+    if (!localStorage.getItem("User") || !this.user.admin) {
+      this.$router.push({
+        path: '/'
+      })
+    }
+  },
 };
 </script>
 
