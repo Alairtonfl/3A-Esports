@@ -8,6 +8,7 @@ import Login from '../page/Login.vue';
 import Register from '../page/Register.vue';
 import RegisterAdm from '../page/RegisterAdm.vue';
 import Dashboard from '../page/Dashboard';
+import InfoProduct from '../page/InfoProduct'
 
 const routes = [
   {
@@ -33,6 +34,10 @@ const routes = [
   {
     path: '/dashboard',
     component: Dashboard
+  },
+  {
+    path: '/info',
+    component: InfoProduct
   }
 
 ]

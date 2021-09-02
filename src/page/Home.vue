@@ -18,7 +18,7 @@
 
 <script>
 import Navbar from "../components/navbar/Navbar.vue";
-import Products from "../components/Product/Product.vue";
+import Products from "../components/Products/Product.vue";
 import "bootstrap/dist/css/bootstrap.min.css";
 import api from "../services/api.js";
 
