@@ -7,6 +7,7 @@ import Home from '../page/Home.vue';
 import Login from '../page/Login.vue';
 import Register from '../page/Register.vue';
 import RegisterAdm from '../page/RegisterAdm.vue';
+import Dashboard from '../page/Dashboard';
 
 const routes = [
   {
@@ -29,7 +30,12 @@ const routes = [
   {
     path: '/admin/register',
     component: RegisterAdm
+  },
+  {
+    path: '/dashboard',
+    component: Dashboard
   }
+
 ]
 
 const router = new VueRouter({

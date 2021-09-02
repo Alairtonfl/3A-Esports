@@ -13,9 +13,12 @@ export default {
 
 <style scoped>
     *{
-      height: 100vw;
-      width: 100vw;
-      background-color: #cfcccc;   
+     height: 625px;
+     background-color: #cfcccc;   
+    }
+    body, html {
+    width: 100%;
+    height: 100%;
     }
 </style>
 
