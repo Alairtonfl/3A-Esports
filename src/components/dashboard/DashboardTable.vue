@@ -1,62 +1,60 @@
 <template>
   <div>
-    <header class="header">
-      <nav class="navbar navbar-expand">
-        <div>
-          <a href="http://localhost:8080/home"
-            ><img src="/static/3AESports2-Semfundo.png" id="form-image-nav"
-          /></a>
-        </div>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup"></div>
-      </nav>
-    </header>
 
-    <div id="btn" class="btn-group" role="group" aria-label="Exemplo básico">
-      <button class="btn btn-danger btn-sm">Deletar Produtos</button>
-      <button class="btn btn-primary btn-sm">Editar Produtos</button>
-      <button class="btn btn-success btn-sm">Ver Produtos</button>
+<div class="container container-fluid border">
+    <div class="container container-fluid border mt-4 mb-4 text-center">
+      <h1>Listagem de Produtos</h1>
     </div>
-
-    <h1 id="alinha">DASHBOARD DE PRODUTOS</h1>
-
-    <table
-      class="table table-bordered table-hover"
-    >
+    <div class="container container-fluid mt-4 mb-4 text-center">
+      <a :href="'/admin/register'"><button
+        type="button"
+        class="btn btn-outline-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#createFunc"
+      >
+        Add Produto
+      </button></a>
+    </div>
+    <table class="table table-hover">
       <thead>
         <tr>
-          <th scope="col">Produtos</th>
-          <th scope="col">Nome</th>
+          <th scope="col">Produto</th>
+          <th scope="col">Categoria</th>
           <th scope="col">Preço</th>
+          <th scope="col">Açoes</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td></td>
-          <td></td>
+        <tr v-for="(product, index) in products" :key="index">
+          <th>{{ product.name }}</th>
+          <td>{{ product.category }}</td>
+          <td>{{ product.price }}</td>
+          <td>
+            <button class="btn btn-danger btn-sm" v-on:click="delProduct(product.id)">
+              DEL
+            </button>
+            <a >
+              <button class="btn btn-primary btn-sm">EDIT</button>
+            </a>
+            <a :href="'/info/' + product.id">
+              <button class="btn btn-success btn-sm">VER</button>
+            </a>
+          </td>
         </tr>
       </tbody>
     </table>
   </div>
+  </div>
 </template>
 
 <script>
+import api from "../../services/api";
 export default {
   name: "DashboardTable",
   data() {
     return {
-      user: []
+      user: [],
+      products: []
     };
   },
   mounted() {
@@ -66,7 +64,19 @@ export default {
         path: '/'
       })
     }
+    api.get("/products").then((Response) => {
+      this.products = Response.data;
+      console.log(this.products)
+    });
   },
+  methods:{
+    delProduct(id) {
+      api.delete("/products/" + id).then((Response) => {
+        this.$router.go();
+        console.log(Response);
+      });
+    },
+  }
 };
 </script>
 

@@ -36,7 +36,7 @@ const routes = [
     component: Dashboard
   },
   {
-    path: '/info',
+    path: '/info/:id',
     component: InfoProduct
   }
 

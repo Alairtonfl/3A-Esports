@@ -21,7 +21,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
         <div class="navbar-wrapper-right">
-          <a class="nav-link btn btn-outline-info text-white ajusts-btn-enter">Sair</a>
+          <a class="nav-link btn btn-outline-info text-white ajusts-btn-enter" ><button v-on:click="logout()">Sair</button></a>
         </div>
       </div>
     </nav>
@@ -31,6 +31,11 @@
 <script>
 export default {
   name: "Navbar",
+  methods:{
+    logout(){
+      localStorage.clear();
+    }
+  }
 };
 </script>
  

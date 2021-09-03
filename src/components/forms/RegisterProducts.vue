@@ -9,7 +9,7 @@
                    <input id="name" type="text" class="form-control" placeholder="Nome" v-model="product.name" required>
                </div>
                <div class="form-group">
-                   <input id="price" type="number" class="form-control" placeholder="Preço" v-model="product.price" required>
+                   <input id="price" type="number" class="form-control" placeholder="Preço" min="0" v-model="product.price" required>
                </div>
                <div class="form-group">
                    <input id="category" type="text" class="form-control" placeholder="Categoria" v-model="product.category" required>
